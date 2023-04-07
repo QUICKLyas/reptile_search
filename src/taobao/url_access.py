@@ -1,15 +1,18 @@
-import taobao.url_creator as url
+import url_creator as urlC
 
 
 class visit(object):
+
     def __init__(self) -> None:
-        self.taobao = url.taobao_url()
+        taobao = urlC()
+        self.url = taobao.create_url()
         pass
 
     def getHTML(self):
-
+        
+        try :
+            r = requests.get(self.makeTargetUrl(1))
         pass
 
-    def setTargetUrl(self, page: int) -> str:
-        url = ""
-        return url
+    def makeTargetUrl(self, page: int, pageSize=44) -> str:
+        return self.url + "&s=" + str(pageSize * page)

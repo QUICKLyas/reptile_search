@@ -1,9 +1,9 @@
-import domain.url as url
+import taobao.url_body as url_body
 
 
 class taobao_url(object):
     def __init__(self) -> None:
-        start_url = url['taobao']
+        start_url = url_body['taobao']
         pass
 
     # 返回一个简单的url用于淘宝的数据的获取
