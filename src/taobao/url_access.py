@@ -11,5 +11,5 @@ class visit(object):
         pass
 
     def setTargetUrl(self, page: int) -> str:
-
-    return url
+        url = ""
+        return url
