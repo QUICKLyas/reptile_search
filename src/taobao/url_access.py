@@ -9,7 +9,7 @@ class visit(object):
         self.url = taobao.create_url()
         self.headers = taobao.create_head()
         pass
-
+            
     def getHTML(self, page: int):
         try:
             r = requests.get(

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import url_access
 import html_parse
+import time as t
 
 
 def print_goods_list(info_goods):
@@ -24,5 +25,6 @@ while(True):
         )
     except:
         break
+    t.sleep(10)
 print_goods_list(info_list)
 # print(tb.getHTML())

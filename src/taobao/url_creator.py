@@ -9,11 +9,15 @@ class taobao_url(object):
     # 返回一个简单的url用于淘宝的数据的获取
     def create_url(self):
         goods = input("please input the name of goods:")
+        if goods == None:
+            goods = "大米"
         self.start_url = self.start_url + goods
         return self.start_url
 
     def create_head(self):
         self.head = {
-            'User-Agent': url_body.ua
+            'User-Agent': url_body.ua,
+            # 自行获取
+            'cookie': 'cna=OsSGGthEh1ICAd9C/iIPAxFf'
         }
         return self.head
