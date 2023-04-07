@@ -22,20 +22,16 @@ options.add_argument('--user-data-dir='+p)
 options.add_argument('--disable-blink-features=AutomationControlled')
 # 浏览器打开
 driver = webdriver.Chrome(options=options)
-url = 'https://taobao.com'
-driver.get(url)
-# 搜索
-time.sleep(2)
-driver.find_element(By.CSS_SELECTOR, '#q').send_keys("大米")
-driver.find_element(
-    By.CSS_SELECTOR, '#J_TSearchForm > div.search-button > button').click()
-# ActionChains.move_to_element()
-# print(items.__len__)
-# 搜索过程中使用
+
 for index in range(1, 101):
-    time.sleep(2)
-    item_index = 1
-    goods_list = []
+    # 检测数据是否已经存储
+    goods_list = fu.readJson(path="./data/taobao/",
+                             file_name="taobao"+str(index))
+    if len(goods_list) != 0:
+        print("next page" + str(index))
+        continue
+    # 重新获取数据
+    driver.get('https://s.taobao.com/search?q=%E5%A4%A7%E7%B1%B3&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20230407&ie=utf8&bcoffset=1&ntoffset=1&p4ppushleft=2%2C48&s='+str(0+44*index))
     i = 1
     while(True):
         try:
@@ -71,9 +67,4 @@ for index in range(1, 101):
 
     fu.writeJson(goods_list, path="./data/taobao/",
                  file_name="taobao"+str(index))
-    driver.get('https://s.taobao.com/search?q=%E5%A4%A7%E7%B1%B3&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20230407&ie=utf8&bcoffset=1&ntoffset=1&p4ppushleft=2%2C48&s='+str(0+44*index))
     time.sleep(10)
-
-
-# 阻塞
-# input()
