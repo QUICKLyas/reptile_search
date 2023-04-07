@@ -3,13 +3,12 @@ import requests
 
 
 class visit(object):
-
     def __init__(self) -> None:
         taobao = urlC.taobao_url()
         self.url = taobao.create_url()
         self.headers = taobao.create_head()
         pass
-            
+
     def getHTML(self, page: int):
         try:
             r = requests.get(

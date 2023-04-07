@@ -7,6 +7,7 @@ class parseHTML(object):
         pass
 
     def parsePage(info_list, html):
+        print(html)
         try:
             re1 = re.compile(r'\"view_price\"\:\"[\d\.]*\"')  # 编译商品价格正则表达式
             re2 = re.compile(r'\"raw_title\"\:\".*?\"')  # 编译商品名称正则表达式
@@ -21,6 +22,14 @@ class parseHTML(object):
                 info_list.append([price, title])
         except:
             print("Web page parsing failed")
+
+    def print_goods_list(self, info_goods):
+        tplt = "{:4}\t{:8}\t{:16}"
+        print(tplt.format("序号", "价格", "商品名称"))
+        count = 0
+        for g in info_goods:
+            count += 1
+            print(tplt.format(count, g[0], g[1]))
 
     def setPage(self, page: int):
         self.page = page
