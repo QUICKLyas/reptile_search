@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     """用户账号及密码登录"""
     driver.find_element_by_xpath(
-        '//*[@id="fm-login-id"]').send_keys('183621334438')  # TODO 输入用户名
+        '//*[@id="fm-login-id"]').send_keys('yabuto')  # TODO 输入用户名
     time.sleep(random.randint(1, 3))
     driver.find_element_by_xpath(
         '//*[@id="fm-login-password"]').send_keys('345789quickly')  # TODO 输入密码
