@@ -15,3 +15,11 @@
 3. 农业农村部官网:
 4. 抖音:
 5. 国家统计局:
+
+chmod +x ./src/taobao_main.py
+./src/taobao_main.py
+
+chmod +x ./src/taobao_check.py
+./src/taobao_check.py
+运行直到出现 OK
+同时注意淘宝网站存在对爬虫的检测
