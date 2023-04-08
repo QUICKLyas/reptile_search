@@ -35,7 +35,7 @@ driver.find_element(
 # 循环获取需要href，并保存这个href下的数据
 i = 1
 items = driver.find_elements(
-    By.CSS_SELECTOR, '#J_selector > div.J_selectorLine.s-brand > div > div.sl-value > div.sl-v-logos > ul')
+    By.CSS_SELECTOR, '//*[@id="J_selector"]/div[1]/div/div[2]/div[2]/ul')
 print(len(items))
 
 for item in items:
